@@ -1,0 +1,190 @@
+.block-animation{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0,2.06,1,-0.8);
+}
+
+.block-animation:hover{
+    background-color: red;
+}
+
+.block{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;  /* задержка */
+    animation-direction: alternate;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+    /* можно и так 
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    } */
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    animation: pulsing 2s infinite ;
+}
+
+@keyframes pulsing{
+    0%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.5);
+    }
+}
+
+.cube{
+    width: 100px; 
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    animation: square 5s infinite;
+}
+
+@keyframes square{
+    0%{
+        left: 0;
+        top: 0;
+    }
+    25%{
+        left: 200px;
+        top: 0;
+        background-color: black;
+    }
+    50%{
+        top: 200px;
+        left: 200px;
+        background-color: green;
+    }
+    75%{
+        top: 200px;
+        left: 0;
+        background-color: pink;
+    }
+    100%{
+        top: 0;
+        left: 0;
+        background-color: red;
+    }
+}
+
+body{
+    background-color: cadetblue;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubble{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+    inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+}
+
+@keyframes animateBubble {
+    from{
+        margin-top: 1000px;
+    }
+    to{
+        margin-top: -100%;
+    }
+}
+
+@keyframes sideWays{
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left: 50px;
+    }
+}
+
+.x1{
+    animation: animateBubble 25s linear infinite, 
+    sideWays 2s ease-in-out infinite alternate;
+    left: -5%;
+    top: 5%;
+
+    transform: scale(0.6);
+}
+
+.x2{
+    animation: animateBubble 20s linear infinite, 
+    sideWays 5s ease-in-out infinite alternate;
+    left: 5%;
+    top: 80%;
+
+    transform: scale(0.4);
+}
+
+.x3{
+    animation: animateBubble 29s linear infinite, 
+    sideWays 4s ease-in-out infinite alternate;
+    left: 10%;
+    top: 50%;
+
+    transform: scale(0.8);
+}
+
+.x4{
+    animation: animateBubble 38s linear infinite, 
+    sideWays 7s ease-in-out infinite alternate;
+    left: 50%;
+    top: 45%;
+
+    transform: scale(0.7);
+}
+
+.x5{
+    animation: animateBubble 33s linear infinite, 
+    sideWays 10s ease-in-out infinite alternate;
+    left: 23%;
+    top: 36%;
+
+    transform: scale(0.6);
+}
+
+.x6{
+    animation: animateBubble 25s linear infinite, 
+    sideWays 2s ease-in-out infinite alternate;
+    left: 90%;
+    top: 23%;
+
+    transform: scale(0.6);
+}
